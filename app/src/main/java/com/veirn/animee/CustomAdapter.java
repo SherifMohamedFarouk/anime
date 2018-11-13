@@ -10,15 +10,27 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.veirn.animee.Model.AnimeCh;
+import com.veirn.animee.Model.Top;
 import com.veirn.animee.Model.TopAnime;
+
+import java.util.List;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomViewHolder> {
 
     private AnimeCh dataList;
-    private Context context;
-    private TopAnime topAnime ;
 
-    public CustomAdapter(Context context,AnimeCh dataList,TopAnime topAnime){
+    public List<Top> getTopAnime() {
+        return topAnime;
+    }
+
+    public void setTopAnime(List<Top> topAnime) {
+        this.topAnime = topAnime;
+    }
+
+    private Context context;
+    private List<Top> topAnime ;
+
+    public CustomAdapter(Context context,AnimeCh dataList,List<Top> topAnime){
         this.context = context;
         this.dataList = dataList;
         this.topAnime = topAnime ;
@@ -88,13 +100,13 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
         }
         else{
 
-            holder.title.setText(String.valueOf(this.topAnime.getTop().get(position).getTitle()));
-            holder.episode.setText(String.valueOf(this.topAnime.getTop().get(position).getEpisodes()));
-            holder.rank.setText(String.valueOf(this.topAnime.getTop().get(position).getRank()));
-            holder.type.setText(String.valueOf(this.topAnime.getTop().get(position).getType()));
-            holder.rate.setText(String.valueOf(this.topAnime.getTop().get(position).getScore()));
+            holder.title.setText(String.valueOf(this.topAnime.get(position).getTitle()));
+            holder.episode.setText(String.valueOf(this.topAnime.get(position).getEpisodes()));
+            holder.rank.setText(String.valueOf(this.topAnime.get(position).getRank()));
+            holder.type.setText(String.valueOf(this.topAnime.get(position).getType()));
+            holder.rate.setText(String.valueOf(this.topAnime.get(position).getScore()));
             Glide.with(context)
-                    .load(this.topAnime.getTop().get(position).getImageUrl())
+                    .load(this.topAnime.get(position).getImageUrl())
                     .into(holder.topimage);
 
 
@@ -111,9 +123,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
         if (dataList != null) {
            data = dataList.getCharacters().size();
         }
-        else if (topAnime !=null){
-            data = topAnime.getTop().size();
-
+        else if (topAnime !=null && topAnime!=null){
+            data = topAnime.size();
         }
         else {
             data = 0 ;
