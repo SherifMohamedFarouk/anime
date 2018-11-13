@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10sp">
+
+    <ImageView
+        android:layout_width="110dp"
+        android:layout_height="160dp"
+        android:id="@+id/topimage"
+
+
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/title"
+        android:text="Title"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toRightOf="@id/topimage"
+        android:textColor="#000000"
+
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/episode"
+        android:text="30"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toRightOf="@id/episode1"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:textColor="#000000"
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/episode1"
+        android:text="Episodes: "
+        android:textSize="25sp"
+
+        app:layout_constraintLeft_toRightOf="@id/topimage"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:textColor="#000000"
+
+
+
+        />
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/rank"
+    android:text="1"
+    android:textSize="25sp"
+    app:layout_constraintLeft_toRightOf="@id/Rank1"
+    app:layout_constraintTop_toBottomOf="@id/episode"
+        android:textColor="#000000"
+
+
+
+
+    />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Rank1"
+        android:text="Rank : "
+        android:textSize="25sp"
+        app:layout_constraintLeft_toRightOf="@id/topimage"
+        app:layout_constraintTop_toBottomOf="@id/episode"
+        android:textColor="#000000"
+
+
+
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/type"
+        android:text="type "
+        android:textSize="25sp"
+        app:layout_constraintLeft_toRightOf="@id/topimage"
+        app:layout_constraintTop_toBottomOf="@id/rank"
+        android:textColor="#000000"
+
+
+
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rate"
+        android:text=" 8"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toRightOf="@id/type"
+        app:layout_constraintTop_toBottomOf="@id/rank"
+        android:textColor="#000000"
+        android:layout_marginLeft="10sp"
+
+
+
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rate1"
+        android:text="  / 10"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toRightOf="@id/rate"
+        app:layout_constraintTop_toBottomOf="@id/rank"
+        android:textColor="#000000"
+
+
+
+
+        />
+
+</android.support.constraint.ConstraintLayout>

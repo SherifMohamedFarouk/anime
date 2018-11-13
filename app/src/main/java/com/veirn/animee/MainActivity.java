@@ -52,8 +52,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager ( ViewPager viewPager){
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFrag( new OneFragment() , "anime");
-        adapter.addFrag(new TwoFragment() , "manga");
+        adapter.addFrag( new OneFragment() , "Characters");
+        adapter.addFrag(new TwoFragment() , "Top Animes");
         viewPager.setAdapter(adapter);
     }
 

@@ -1,6 +1,7 @@
 
 package com.veirn.animee.Model;
 
+import java.util.ArrayList;
 import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -18,7 +19,7 @@ public class AnimeCh {
     private Integer requestCacheExpiry;
     @SerializedName("characters")
     @Expose
-    private List<Character> characters = null;
+    private List<Character> characters = new ArrayList<>();
 
     public String getRequestHash() {
         return requestHash;

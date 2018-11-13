@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -20,7 +21,8 @@ import retrofit2.Response;
 
 public class OneFragment extends Fragment{
     private CustomAdapter adapter;
-    private RecyclerView recyclerView ;
+    private RecyclerView recyclerView;
+    DividerItemDecoration mDividerItemDecoration;
 
     public OneFragment() {
         // Required empty public constructor
@@ -35,10 +37,14 @@ public class OneFragment extends Fragment{
             @Override
             public void onResponse(Call<AnimeCh> call, Response<AnimeCh> response) {
                 recyclerView = getView().findViewById(R.id.AnimeREC);
-                adapter = new CustomAdapter(getActivity() ,response.body());
+                adapter = new CustomAdapter(getActivity() ,response.body() ,null);
                 RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
                 recyclerView.setLayoutManager(layoutManager);
+                mDividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
+                        ((LinearLayoutManager) layoutManager).VERTICAL);
+                recyclerView.addItemDecoration(mDividerItemDecoration);
                 recyclerView.setAdapter(adapter);
+
 
             }
 
@@ -48,8 +54,9 @@ public class OneFragment extends Fragment{
 
             }
         });
-
     }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -57,5 +64,6 @@ public class OneFragment extends Fragment{
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_one, container, false);
     }
+
 
 }
